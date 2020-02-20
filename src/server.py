@@ -131,6 +131,8 @@ if not os.getenv('VGS_COLLECT_LIBRARY_URL'):
     raise Exception('VGS_COLLECT_LIBRARY_URL is missing')
 if not os.getenv('VAULT_ID'):
     raise Exception('VAULT_ID is missing')
+if not os.getenv('VGS_COLLECT_ENV'):
+    raise Exception('VGS_COLLECT_ENV is missing')
 
 fd, cert_path = tempfile.mkstemp()
 
