@@ -1,4 +1,4 @@
-#How to use
+# How to use
  * Install docker
  * Open terminal and run `docker-compose up --build payment-demo`
  
