@@ -25,11 +25,6 @@ Transactions = {}
 demo_public_url = ngrok.connect(proto='http', port=3000)
 https_public_url = demo_public_url.replace('http', 'https')
 
-print('\033[92m --------------------------------------------------\n \033[0m')
-print(f'\033[92m   PUBLIC URL: \033[0m {https_public_url}\n')
-print(f'  You need to copy public url, follow to {os.getenv("INBOUND_ROUTE_LINK")} \nand paste public url as upstream host\n')
-print('\033[92m -------------------------------------------------- \033[0m')
-
 @app.route('/', methods=['GET'])
 @app.route('/credit-card.html', methods=['GET'])
 def credit_card():
@@ -150,6 +145,15 @@ try:
     )
 finally:
     print(cert_path)
+
+print(f'\033[92m {"-"*150}\n \033[0m')
+print(f'\033[92m   WELCOME TO VGS DEMO APPLICATION \U0001F440 \n\n')
+print(f'\033[92m   To run application follow next steps:\n')
+print(f'\033[92m   1. Copy PUBLIC URL \033[0m {https_public_url}\n')
+print(f'\033[92m   2. OPEN inbound route \033[0m {os.getenv("INBOUND_ROUTE_LINK")}\n')
+print(f'\033[92m   3. Set up PUBLIC URL as upstream host\n')
+print(f'\033[92m   4. Open PUBLIC URL \033[0m {https_public_url}\n')
+print(f'\033[92m {"-"*150}\n \033[0m')
 
 if __name__ == '__main__':
     app.run(port=3000, host='0.0.0.0', debug=False)
