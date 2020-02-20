@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  payment-demo:
+    env_file:
+      - .env
+    build: .
+    ports:
+      - "3000:3000"
+
