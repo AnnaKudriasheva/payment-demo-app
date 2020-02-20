@@ -68,13 +68,13 @@ def post():
     # create card on stripe
     # in this stage the data is redacted and it will be revealed through the vgs proxy
     # that is configured in the __main__ function
-    exp_month, exp_year = request.json['cardExpirationDate'].split('/')
+    exp_month, exp_year = request.json['card_expiration_date'].split('/')
     card = {
-        'number': request.json['cardNumber'],
-        'name': request.json['cardName'],
+        'number': request.json['card_number'],
+        'name': request.json['card_name'],
         'exp_month': int(exp_month.strip()),
         'exp_year': int(exp_year.strip()),
-        'cvc': request.json['cardCvc'],
+        'cvc': request.json['card_cvc'],
     }
 
     try:

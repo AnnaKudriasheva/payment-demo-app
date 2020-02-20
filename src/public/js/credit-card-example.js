@@ -3,7 +3,7 @@ var f = VGSCollect.create('{{VAULT_ID}}', '{{VGS_COLLECT_ENV}}',  function (stat
 
 var field = f.field('#cc-name .form-control', {
     type: 'text',
-    name: 'cardName',
+    name: 'card_name',
     placeholder: 'Joe Business',
     validations: ['required'],
 });
@@ -19,7 +19,7 @@ f.field('#amount .form-control', {
 
 f.field('#cc-number .form-control', {
     type: 'card-number',
-    name: 'cardNumber',
+    name: 'card_number',
     successColor: '#4F8A10',
     errorColor: '#D8000C',
     placeholder: '4111 1111 1111 1111',
@@ -28,14 +28,14 @@ f.field('#cc-number .form-control', {
 
 f.field('#cc-cvc .form-control', {
     type: 'card-security-code',
-    name: 'cardCvc',
+    name: 'card_cvc',
     placeholder: '344',
     validations: ['required', 'validCardSecurityCode'],
 });
 
 f.field('#cc-expiration-date .form-control', {
     type: 'card-expiration-date',
-    name: 'cardExpirationDate',
+    name: 'card_expiration_date',
     placeholder: '01 / 2022',
     validations: ['required', 'validCardExpirationDate']
 });
