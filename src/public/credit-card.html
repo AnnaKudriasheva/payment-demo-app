@@ -35,14 +35,7 @@
                         </a>
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a class="github" href="https://github.com/verygoodsecurity/vgs-stripe-demo"><i class="fab fa-github"></i> View on GitHub</a>
-                            </li>
-                            <li>
-                                <a class="btn-log-in" href="https://dashboard.verygoodsecurity.com/"
-                                    data-category="header" data-event="log in">Log In</a></li>
-                            <li class="active">
-                                <a class="btn-get" href="https://dashboard.verygoodsecurity.com/" data-category="header"
-                                    data-event="sign up">Sign Up</a>
+                                <a class="github" href="https://github.com/verygoodsecurity/payment-demo-app"><i class="fab fa-github"></i> View on GitHub</a>
                             </li>
                         </ul>
                     </div>
@@ -50,7 +43,10 @@
             </nav>
         </section>
         <div class="container">
-            <h2 class="mt-5 mb-2 text-center">VGS Collect.js and Stripe 3DS flow demo</h2>
+            <h2 class="mt-5 mb-2 text-center">VGS for Payments example integration</h2>
+            <p>Redact card data via VGS Collect.js secure forms</p>
+            <p>Reveal card data to Stripe tokens API</p>
+            <p>Charge with Stripe payment intents API</p>
             <section id="credit-card-example" class="container py-lg-5 example-container">
                 <!--Example Capturing credit card data-->
                 <div class="row">
@@ -131,16 +127,6 @@
         </div>
     </main>
     <script src="js/credit-card-example.js"></script>
-    <!-- <script type="text/javascript">
-        // if modal
-        document.querySelector('.btn-dismiss').onclick = function () {
-            // parent.postMessage("message to be sent", "http://the-website-that-will-receive-the-msg.com")
-            parent.postMessage({
-                kind: "close-modal",
-                data: null
-            }, "*")
-        };
-    </script> -->
 </body>
 
 </html>

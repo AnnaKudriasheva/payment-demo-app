@@ -1,5 +1,5 @@
-p, a, h1, h2, h3, h4, h5, h6, button {
-    font-family: 'Varela', sans-serif !important;
+body {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
 }
 
 form {
