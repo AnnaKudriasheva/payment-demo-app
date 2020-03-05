@@ -6,14 +6,13 @@ import tempfile
 
 import stripe
 import ulid
-import pyngrok
 from dotenv import load_dotenv
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from stripe.error import StripeError
 from pyngrok import ngrok
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 
 load_dotenv()
 app = Flask(__name__,
@@ -26,14 +25,14 @@ Transactions = {}
 demo_public_url = ngrok.connect(proto='http', port=3000)
 https_public_url = demo_public_url.replace('http', 'https')
 
-print(f'\033[92m {"-"*150}\n \033[0m')
+print(f'\033[92m {"-"*40}\n \033[0m')
 print(f'\033[92m   WELCOME TO VGS DEMO APPLICATION \U0001F440 \n\n')
 print(f'\033[92m   To run application follow next steps:\n')
 print(f'\033[92m   1. Copy PUBLIC URL \033[0m {https_public_url}\n')
 print(f'\033[92m   2. OPEN inbound route \033[0m {os.getenv("INBOUND_ROUTE_LINK")}\n')
 print(f'\033[92m   3. Set up PUBLIC URL as upstream host\n')
 print(f'\033[92m   4. Open PUBLIC URL \033[0m {https_public_url}\n')
-print(f'\033[92m {"-"*150}\n \033[0m')
+print(f'\033[92m {"-"*40}\n \033[0m')
 
 @app.route('/', methods=['GET'])
 @app.route('/credit-card.html', methods=['GET'])
