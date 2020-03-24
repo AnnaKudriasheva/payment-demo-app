@@ -1,3 +1,6 @@
+// VGS Collect.js secure fields configuration
+// https://www.verygoodsecurity.com/docs/vgs-collect/js/integration
+
 var f = VGSCollect.create('{{VAULT_ID}}', '{{VGS_COLLECT_ENV}}',  function (state) {
 });
 
@@ -16,7 +19,6 @@ f.field('#amount .form-control', {
     defaultValue: urlParams['amount'] || 100,
 });
 
-
 f.field('#cc-number .form-control', {
     type: 'card-number',
     name: 'card_number',
@@ -24,6 +26,7 @@ f.field('#cc-number .form-control', {
     errorColor: '#D8000C',
     placeholder: '4111 1111 1111 1111',
     validations: ['required', 'validCardNumber'],
+    showCardIcon: true,
 });
 
 f.field('#cc-cvc .form-control', {

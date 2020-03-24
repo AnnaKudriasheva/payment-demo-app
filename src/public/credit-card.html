@@ -44,37 +44,47 @@
         </section>
         <div class="container">
             <h2 class="mt-5 mb-2 text-center">VGS for Payments example integration</h2>
-            <p class="text-center">Redact card data via VGS Collect.js secure forms</p>
-            <p class="text-center">Reveal card data to Stripe tokens API</p>
-            <p class="text-center">Charge with Stripe payment intents API</p>
             <section id="credit-card-example" class="container py-lg-5 example-container">
                 <!--Example Capturing credit card data-->
                 <div class="row">
                     <div class="col-md-6">
+                        <ul class="steps">
+                            <li>
+                                Redact card data via 
+                                <a href="https://www.verygoodsecurity.com/docs/vgs-collect/js/overview" target="_blank">VGS Collect.js</a>
+                                secure fields
+                            </li>
+                            <li>
+                                Reveal card data to <a href="https://stripe.com/docs/api/tokens" target="_blank">Stripe tokens API</a>
+                            </li>
+                            <li>
+                               Charge with <a href="https://stripe.com/docs/payments/payment-intents" target="_blank">Stripe Payment Intents API</a>
+                            </li>
+                        </ul>
                         <h4>Test Cards</h4>
                         <table id="test-card-numbers" class="table">
                             <tr>
                                 <td>
-                                    4242424242424242
+                                    4242 4242 4242 4242
                                 </td>
                                 <td>
-                                    3D Secure authentication not supported, but will charge successfully
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    4000000000003055
-                                </td>
-                                <td>
-                                    3D Secure authentication supported, will go through the full 3D Secure flow
+                                    Visa
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    4000000000003063
+                                    5555 5555 5555 4444
                                 </td>
                                 <td>
-                                    3D Secure authentication required, charge will be declined without it
+                                    MasterCard
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3782 822463 10005
+                                </td>
+                                <td>
+                                    Amex
                                 </td>
                             </tr>
                         </table>
