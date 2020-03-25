@@ -9,15 +9,12 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="js/urlParams.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://www.verygoodsecurity.com/theme/css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 </head>
@@ -32,26 +29,12 @@
     </div>
     <main id="main" style="display: none">
         <section class="header main-header">
-            <nav
-                class="navbar navbar-default navbar-light fixed-top navbar-fixed-top navbar-expand flex-column flex-md-row">
+            <nav class="navbar navbar-default navbar-light navbar-expand flex-column flex-md-row">
                 <div class="container">
                     <div class="navbar-header pl-3 pr-3">
                         <a class="navbar-brand" href="/" data-category="header" data-event="homepage">
                             <img src="img/vgs-logo-demo.svg" alt="logo">
                         </a>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a class="github" href="https://github.com/verygoodsecurity/vgs-stripe-demo"><i
-                                        class="fab fa-github"></i> View on GitHub</a>
-                            </li>
-                            <li>
-                                <a class="btn-log-in" href="https://dashboard.verygoodsecurity.com/"
-                                    data-category="header" data-event="log in">Log In</a></li>
-                            <li class="active">
-                                <a class="btn-get" href="https://dashboard.verygoodsecurity.com/" data-category="header"
-                                    data-event="sign up">Sign Up</a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </nav>
@@ -65,20 +48,16 @@
                 <!--Example Capturing credit card data-->
                 <div class="card">
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <span class="badge badge-warning"
-                                        style="margin-right: 16px; display: inline-flex; align-items: center;">Status</span>
-                                    <span id="tx_status">...</span>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <span class="badge  badge-warning"
-                                        style="margin-right: 16px; display: inline-flex; align-items: center;">Message</span>
-                                    <span id="tx_message">...</span>
-                                </div>
-                            </div>
+                        <div>
+                            <span class="badge badge-warning"
+                                style="margin-right: 16px; display: inline-flex; align-items: center;">Status</span>
+                            <span id="tx_status">...</span>
+                        </div>
+                        <br>
+                        <div>
+                            <span class="badge  badge-warning"
+                                style="margin-right: 16px; display: inline-flex; align-items: center;">Message</span>
+                            <span id="tx_message">...</span>
                         </div>
                     </div>
                 </div>
