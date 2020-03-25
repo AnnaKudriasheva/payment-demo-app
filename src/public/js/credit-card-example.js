@@ -1,7 +1,7 @@
 // VGS Collect.js secure fields configuration
 // https://www.verygoodsecurity.com/docs/vgs-collect/js/integration
 
-var f = VGSCollect.create('{{VAULT_ID}}', '{{VGS_COLLECT_ENV}}',  function (state) {
+var f = VGSCollect.create('{{VAULT_ID}}', '{{VGS_VAULT_ENV}}',  function (state) {
 });
 
 var field = f.field('#cc-name .form-control', {

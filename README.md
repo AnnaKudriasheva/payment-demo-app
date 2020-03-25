@@ -13,8 +13,9 @@ STRIPE_KEY=
 VGS_PROXY=
 VGS_COLLECT_LIBRARY_URL=
 VAULT_ID=
-VGS_COLLECT_ENV=
+VGS_VAULT_ENV=
 INBOUND_ROUTE_LINK=
+VGS_PROXY_CERTIFICATE_B64=
 ```
 
 where 
@@ -23,8 +24,9 @@ where
 * `VGS_PROXY`: full URL with credentials for the VGS outbound proxy, `https://USERNAME:PASSWORD@<vault_id>.SANDBOX.verygoodproxy.com:8080`
 * `VGS_COLLECT_LIBRARY_URL`: https://dashboard.verygoodsecurity.com -> VGS Collect page
 * `VAULT_ID`: https://dashboard.verygoodsecurity.com -> Settings -> Identifier
-* `VGS_COLLECT_ENV`: VGS Vault environment, `sandbox|live`
+* `VGS_VAULT_ENV`: VGS Vault environment, `sandbox|live`
 * `INBOUND_ROUTE_LINK`: VGS inbound route link wich was created
+* `VGS_PROXY_CERTIFICATE_B64`: VGS proxy certificate encoded as a base64 string. **Optional** field, if no - default VGS Sandbox certificate used.
 
 ## How to integrate into your own app
 
