@@ -1,41 +1,36 @@
-<p align="center">
- <a href="https://www.verygoodsecurity.com/" target="_blank">
-  <img src="https://avatars0.githubusercontent.com/u/17788525" width="128" alt="VGS Logo">
- </a>
-
- <a href="https://stripe.com/" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" width="100" alt="VGS Logo">  </a>
-</p>
-
-<p align="center">
- <b>VGS + Stripe demo app</b><br/>
- Demo application with simple checkout form which send request to the Stripe API 
- through the <a href="https://www.verygoodsecurity.com/docs/vgs-collect/js/overview" target="_blank">VGS Collect.js</a>       library.
-</p>
-
-# Payment demo app
- This repository contains two key components:
-
-* Python <a href="https://palletsprojects.com/p/flask/" target="_blank">Flask</a> server
-* HTML with <a href="https://www.verygoodsecurity.com/docs/vgs-collect/js/overview" target="_blank">VGS Collect.js</a> secure checkout fields
-
-## Requirements
-
-* Account with <a href="https://www.verygoodsecurity.com/" target="_blank">VGS</a>
-* <a href="https://docs.docker.com/install/" target="_blank">Docker</a>
+## VGS for Payments quick start app
+This demo application demonstrates secure payment data collection with [VGS Collect.js](https://www.verygoodsecurity.com/docs/vgs-collect/js/overview)and revealing this data to a third-party payment provider.
 
 ## How to use
+* Install [docker](https://docs.docker.com/install/)
+* Run `docker-compose up --build payment-demo`
+* Follow the instructions in your terminal. After you run an application, you'll see a generated `PUBLIC URL` and link to the VGS dashboard. You need to open the VGS dashboard in your browser using the link and do updates on the inbound route: copy/paste `PUBLIC URL` as an upstream host.
 
-1. Run `docker-compose up --build payment-demo`
- 
-2. Follow the instructions in your terminal. After you run an application, you'll see a generated `PUBLIC URL` and link to the VGS dashboard. You need to open the VGS dashboard in your browser using the link and do updates on the inbound route: copy/paste `PUBLIC URL` as an upstream host.
+All configurations are set in `.env` file in the project root directory using this template. This file is already pre-filled for your set up.
+
+```.env
+STRIPE_KEY=
+VGS_PROXY=
+VGS_COLLECT_LIBRARY_URL=
+VAULT_ID=
+VGS_COLLECT_ENV=
+INBOUND_ROUTE_LINK=
+```
+
+where 
+
+* `STRIPE_KEY`: Stripe Secret API Key (Stripe dashboard -> Developers -> API keys) 
+* `VGS_PROXY`: full URL with credentials for the VGS outbound proxy, `https://USERNAME:PASSWORD@<vault_id>.SANDBOX.verygoodproxy.com:8080`
+* `VGS_COLLECT_LIBRARY_URL`: https://dashboard.verygoodsecurity.com -> VGS Collect page
+* `VAULT_ID`: https://dashboard.verygoodsecurity.com -> Settings -> Identifier
+* `VGS_COLLECT_ENV`: VGS Vault environment, `sandbox|live`
+* `INBOUND_ROUTE_LINK`: VGS inbound route link wich was created
 
 ## How to integrate into your own app
 
 Check out these files:
-
-* `src/public/credit-card.html`
-* `src/public/js/credit-card-example.js` - copy VGS Collect.js integration and check additional library abilities in <a href="https://www.verygoodsecurity.com/docs/vgs-collect/js/overview" target="_blank">documentation</a>.
-* `src/server.py`
+* `src/public/credit-card.html` - Payments form with VGS Collect.js
+* `src/public/js/credit-card-example.js` - VGS Collect.js init and fields configuration
+* `src/server.py` - Server with requests to third-party payment provider
 
 For more information please contact <a href="mailto:support@verygoodsecurity.com">support@verygoodsecurity.com </a>
