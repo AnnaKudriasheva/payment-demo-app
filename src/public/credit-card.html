@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="https://www.verygoodsecurity.com/theme/css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script type="text/javascript" src="{{VGS_COLLECT_LIBRARY_URL}}"></script>
     <script src="https://verygoodsecurity.github.io/vgs-collect-examples/vendor/jquery-3.3.1.min.js"></script>
@@ -26,55 +25,73 @@
 <body>
     <main>
         <section class="header main-header">
-            <nav
-                class="navbar navbar-default navbar-light fixed-top navbar-fixed-top navbar-expand flex-column flex-md-row">
+            <nav class="navbar navbar-default navbar-light navbar-expand flex-column flex-md-row">
                 <div class="container">
                     <div class="navbar-header pl-3 pr-3">
                         <a class="navbar-brand" href="/" data-category="header" data-event="homepage">
                             <img src="img/vgs-logo-demo.svg" alt="logo">
                         </a>
-                        <ul class="nav navbar-nav navbar-right">
+                        <!-- <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a class="github" href="https://github.com/verygoodsecurity/payment-demo-app"><i class="fab fa-github"></i> View on GitHub</a>
+                                <a class="github" href="https://github.com/verygoodsecurity/payment-demo-app"><i
+                                        class="fab fa-github"></i> View on GitHub</a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
             </nav>
         </section>
         <div class="container">
-            <h2 class="mt-5 mb-2 text-center">VGS for Payments example integration</h2>
-            <p class="text-center">Redact card data via VGS Collect.js secure forms</p>
-            <p class="text-center">Reveal card data to Stripe tokens API</p>
-            <p class="text-center">Charge with Stripe payment intents API</p>
+            <h2 class="mb-2 text-center">VGS for Payments example integration</h2>
             <section id="credit-card-example" class="container py-lg-5 example-container">
                 <!--Example Capturing credit card data-->
                 <div class="row">
                     <div class="col-md-6">
+                        <p>This demo application demonstrates secure payment data collection and revealing this
+                            data to a third-party payment provider. It includes:
+                        </p>
+                        <ul>
+                            <li>
+                                Collect and redact payments data with
+                                <a href="https://www.verygoodsecurity.com/docs/vgs-collect/js/overview"
+                                    target="_blank">VGS Collect.js</a>
+                                secure fields
+                            </li>
+                            <li>
+                                Reveal payments data to <a href="https://stripe.com/docs/api/tokens"
+                                    target="_blank">Stripe
+                                    tokens API</a>
+                            </li>
+                            <li>
+                                Charge card with <a href="https://stripe.com/docs/payments/payment-intents"
+                                    target="_blank">Stripe Payment Intents API</a>
+                            </li>
+                        </ul>
+                        <br>
                         <h4>Test Cards</h4>
                         <table id="test-card-numbers" class="table">
                             <tr>
                                 <td>
-                                    4242424242424242
+                                    4242 4242 4242 4242
                                 </td>
                                 <td>
-                                    3D Secure authentication not supported, but will charge successfully
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    4000000000003055
-                                </td>
-                                <td>
-                                    3D Secure authentication supported, will go through the full 3D Secure flow
+                                    Visa
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    4000000000003063
+                                    5555 5555 5555 4444
                                 </td>
                                 <td>
-                                    3D Secure authentication required, charge will be declined without it
+                                    MasterCard
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3782 822463 10005
+                                </td>
+                                <td>
+                                    Amex
                                 </td>
                             </tr>
                         </table>
