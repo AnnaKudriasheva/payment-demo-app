@@ -1,10 +1,19 @@
 ## VGS for Payments quick start app
-This demo application demonstrates secure payment data collection with [VGS Collect.js](https://www.verygoodsecurity.com/docs/vgs-collect/js/overview)and revealing this data to a third-party payment provider.
+This demo application demonstrates secure payment data collection with [VGS Collect.js](https://www.verygoodsecurity.com/docs/vgs-collect/js/overview) and revealing this data to a third-party payment provider.
 
 ## How to use
-* Install [docker](https://docs.docker.com/install/)
+* Install [Docker](https://docs.docker.com/install/)
 * Run `docker-compose up --build payment-demo`
-* Follow the instructions in your terminal. After you run an application, you'll see a generated `PUBLIC URL` and link to the VGS dashboard. You need to open the VGS dashboard in your browser using the link and do updates on the inbound route: copy/paste `PUBLIC URL` as an upstream host.
+
+Follow the instructions in your terminal: 
+
+1. Copy generated ngrok `PUBLIC URL`
+2. Open VGS Inbound Route configuration
+3. Set up `PUBLIC URL` as `Upstream host`
+4. Open application and submit the form
+5. Check VGS Logs to see how data was transmitted
+
+## Where to find configurations?
 
 All configurations are set in `.env` file in the project root directory using this template. This file is already pre-filled for your set up.
 
