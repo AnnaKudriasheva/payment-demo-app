@@ -7,9 +7,9 @@ This demo application demonstrates secure payment data collection with [VGS Coll
 
 Follow the instructions in your terminal: 
 
-1. Copy generated ngrok `PUBLIC URL`
-2. Open VGS Inbound Route configuration
-3. Set up `PUBLIC URL` as `Upstream host`
+1. Open VGS Inbound Route configuration
+2. Copy generated ngrok `PUBLIC URL`
+3. Set up `PUBLIC URL` as `Upstream host` and save changes
 4. Open application and submit the form
 5. Check VGS Logs to see how data was transmitted
 
