@@ -25,15 +25,15 @@ Transactions = {}
 demo_public_url = ngrok.connect(proto='http', port=3000)
 https_public_url = demo_public_url.replace('http', 'https')
 
-print(f'\033[92m {"-"*40}\n \033[0m')
-print(f'\033[92m   WELCOME TO VGS DEMO APPLICATION \U0001F440 \n\n')
+print(f'\033[92m {"="*40}\n \033[0m')
+print(f'\033[92m   WELCOME TO VGS DEMO APPLICATION \U0001F680 \n\n')
 print(f'\033[92m   To run application follow next steps:\n')
-print(f'\033[92m   1. Copy PUBLIC URL \033[0m {https_public_url}\n')
-print(f'\033[92m   2. OPEN inbound route \033[0m {os.getenv("INBOUND_ROUTE_LINK")}\n')
-print(f'\033[92m   3. Set up PUBLIC URL as upstream host\n')
-print(f'\033[92m   4. Open PUBLIC URL \033[0m {https_public_url} and submit the form\n')
+print(f'\033[92m   1. OPEN inbound route \033[0m{os.getenv("INBOUND_ROUTE_LINK")}\n')
+print(f'\033[92m   2. Copy PUBLIC URL \033[0m{https_public_url}\n')
+print(f'\033[92m   3. Set up PUBLIC URL as Upstream host and save changes\n')
+print(f'\033[92m   4. Open PUBLIC URL\033[0m {https_public_url}\033[92m and submit the form \033[0m\n')
 print(f'\033[92m   5. Check out VGS Logs to see how data was transmitted\n')
-print(f'\033[92m {"-"*40}\n \033[0m')
+print(f'\033[92m {"="*40}\n \033[0m')
 
 @app.route('/', methods=['GET'])
 @app.route('/credit-card.html', methods=['GET'])
@@ -114,7 +114,7 @@ def post():
     try:
         intent_response = stripe.PaymentIntent.confirm(
             pi_response['id'],
-            return_url=f'{https_public_url}/confirm_3ds.html?transaction_id={transaction_id}'
+            return_url=f'{https_public_url}/payment_confirmation.html?transaction_id={transaction_id}'
         )
     except StripeError as e:
         return jsonify({'kind': 'error', 'message': e.user_message}), 400
