@@ -20,6 +20,19 @@ a:hover, a:active {
     outline: 0;
 }
 
+img {
+    max-width: 100%;
+}
+
+.img-container {
+    max-width: 80%;
+    margin: 0 auto 25px auto;
+}
+
+.mb-25 {
+    margin-bottom: 25px;
+}
+
 .highlighted {
     color: #dc3545;
 }

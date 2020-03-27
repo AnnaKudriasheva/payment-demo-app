@@ -46,7 +46,7 @@
                     <a href="/"><i class="fas fa-chevron-left"></i> Back to homepage</a>
                 </div>
                 <!--Example Capturing credit card data-->
-                <div class="card">
+                <div class="card mb-25">
                     <div class="card-body">
                         <div>
                             <span class="badge badge-warning"
@@ -55,16 +55,31 @@
                         </div>
                         <br>
                         <div>
-                            <span class="badge  badge-warning"
+                            <span class="badge badge-warning"
                                 style="margin-right: 16px; display: inline-flex; align-items: center;">Message</span>
                             <span id="tx_message">...</span>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <p>Congratulations!</p>
-                        <p>Check out <span class="dashboard-logs-link"></span> to see how data was transmitted.</p>
-                        <p>Check out <a href="https://dashboard.stripe.com/" target="_blank">Stripe dashboard</a> to see succeeded payment.</p>
+                </div>
+                <div class="mb-25">
+                    <h3>What just happened here?</h3>
+                    <div class="img-container">
+                        <img src="./img/vgs-stripe-diagram.png">
                     </div>
+                    <p>1. The data was submitted through the <a href="https://www.verygoodsecurity.com/docs/vgs-collect/js/overview" tatget="_blank">VGS Collect.js</a>.</p>
+                    <p>2. Our <a href="https://www.verygoodsecurity.com/docs/guides/inbound-connection" tatget="_blank">Reverse</a>
+                        proxy converted sensitive data into secure aliases.
+                    </p>
+                    <p>3. The server got aliases instead of the raw data.</p>
+                    <p>4. The request was sent to the Stripe API.</p>
+                    <p>5. VGS’s <a href="https://www.verygoodsecurity.com/docs/guides/outbound-connection" tatget="_blank">Forward</a>
+                        proxy revealed aliases and sent sensitive data to the Stripe API.
+                    </p>
+                </div>
+                <div class="mb-25">
+                    <h3>What's next?</h3>
+                    <p>1. Check out <span class="dashboard-logs-link"></span> to see how data was transmitted.</p>
+                    <p>2. Check out <a href="https://dashboard.stripe.com/" target="_blank">Stripe dashboard</a> to see succeeded payment.</p>
                 </div>
             </section>
         </div>
