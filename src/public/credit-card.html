@@ -36,6 +36,17 @@
         </section>
         <div class="container">
             <h2 class="mb-2 text-center">VGS for Payments example integration</h2>
+            <div class="card help-message-warning alert-danger d-none">
+                <div class="card-body">
+                    <p>Oops, probably you forgot to follow the instructions. Please do the next steps:</p>
+                    <ul>
+                        <li>Copy PUBLIC URL {{PUBLIC_URL}}</li>
+                        <li>Open <a href="{{INBOUND_ROUTE_LINK}}" target="_blank">VGS Inbound route</a> configuration</li>
+                        <li>Set up PUBLIC URL as Upstream host and save changes</li>
+                        <li>Open PUBLIC URL <a href="{{PUBLIC_URL}}">{{PUBLIC_URL}}</a> and submit the form</li>
+                    </ul>
+                </div>
+            </div>
             <section id="credit-card-example" class="container py-lg-5 example-container">
                 <!--Example Capturing credit card data-->
                 <div class="row">
@@ -60,6 +71,16 @@
                                     target="_blank">Stripe Payment Intents API</a>
                             </li>
                         </ul>
+                        <div class="card help-message alert-secondary d-none">
+                            <div class="card-body">
+                                <p>Before you start to use application, please make sure you did next steps:</p>
+                                <ul>
+                                    <li>Copy PUBLIC URL {{PUBLIC_URL}}</li>
+                                    <li>Open <a href="{{INBOUND_ROUTE_LINK}}" target="_blank">VGS Inbound route</a> configuration</li>
+                                    <li>Set up PUBLIC URL as Upstream host and save changes</li>
+                                </ul>
+                            </div>
+                        </div>
                         <br>
                         <h4>Test Cards</h4>
                         <table id="test-card-numbers" class="table">
@@ -110,15 +131,15 @@
                                             <span class="form-control"></span>
                                             <span class="error-message" data-name="card.number"></span>
                                         </div>
-                                        <div id="cc-cvc" class="form-group">
-                                            <label for="cc-cvc-field">CVC</label>
-                                            <span class="form-control"></span>
-                                            <span class="error-message" data-name="card.cvc"></span>
-                                        </div>
                                         <div id="cc-expiration-date" class="form-group">
                                             <label for="cc-expiration-date-field">Expiration date</label>
                                             <span class="form-control"></span>
                                             <span class="error-message" data-name="card.expirationDate"></span>
+                                        </div>
+                                        <div id="cc-cvc" class="form-group">
+                                            <label for="cc-cvc-field">CVC</label>
+                                            <span class="form-control"></span>
+                                            <span class="error-message" data-name="card.cvc"></span>
                                         </div>
                                     </fieldset>
                                     <div id="form-error" class="alert alert-danger" style="display: none" role="alert">
@@ -126,7 +147,6 @@
                                     <button type="submit" id="purchase-btn" class="btn btn-primary text-center">
                                         Purchase
                                     </button>
-                                    <!-- <button class="btn btn-secondary btn-dismiss">Cancel</button> -->
                                 </form>
                             </div>
                         </div>
@@ -136,7 +156,16 @@
             </section>
         </div>
     </main>
-    <script src="js/credit-card-example.js"></script>
+    <script src="js/vgs-collect-init.js"></script>
+    <script>
+        if (/\.ngrok\.io/.test(window.location.host)) {
+            var helpMessage = document.getElementsByClassName('help-message')[0];
+            helpMessage.classList.remove('d-none');
+        } else {
+            var helpMessageWarning = document.getElementsByClassName('help-message-warning')[0];
+            helpMessageWarning.classList.remove('d-none');
+        }
+    </script>
 </body>
 
 </html>

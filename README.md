@@ -41,7 +41,7 @@ where
 
 Check out these files:
 * `src/public/credit-card.html` - Payments form with VGS Collect.js
-* `src/public/js/credit-card-example.js` - VGS Collect.js init and fields configuration
+* `src/public/js/vgs-collect-init.js` - VGS Collect.js init and fields configuration
 * `src/server.py` - Server with requests to third-party payment provider
 
 For more information please contact <a href="mailto:support@verygoodsecurity.com">support@verygoodsecurity.com </a>

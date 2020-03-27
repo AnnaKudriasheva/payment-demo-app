@@ -60,6 +60,11 @@
                             <span id="tx_message">...</span>
                         </div>
                     </div>
+                    <div class="card-body">
+                        <p>Congratulations!</p>
+                        <p>Check out <span class="dashboard-logs-link"></span> to see how data was transmitted.</p>
+                        <p>Check out <a href="https://dashboard.stripe.com/" target="_blank">Stripe dashboard</a> to see succeeded payment.</p>
+                    </div>
                 </div>
             </section>
         </div>
@@ -103,6 +108,15 @@
             $('#tx_message').text('credit card does not support 3D Secure authentication');
         } else {
             doPoll();
+        }
+
+        if (urlParams['dashboard_logs_link']) {
+            var link = urlParams['dashboard_logs_link'];
+            var l = document.createElement('a');
+            l.href = link;
+            l.text = 'VGS Logs';
+            l.target = '_blank';
+            $('.dashboard-logs-link').append(l);
         }
     </script>
 </body>

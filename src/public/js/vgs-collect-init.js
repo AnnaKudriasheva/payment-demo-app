@@ -1,8 +1,7 @@
 // VGS Collect.js secure fields configuration
 // https://www.verygoodsecurity.com/docs/vgs-collect/js/integration
 
-var f = VGSCollect.create('{{VAULT_ID}}', '{{VGS_VAULT_ENV}}',  function (state) {
-});
+var f = VGSCollect.create('{{VAULT_ID}}', '{{VGS_VAULT_ENV}}', function (state) {});
 
 var field = f.field('#cc-name .form-control', {
     type: 'text',
@@ -74,9 +73,10 @@ document.getElementById('cc-form')
             $('#purchase-btn').prop('disabled', false);
             if (data && data.kind) {
                 if (data.kind === "transaction_succeeded_without_3ds") {
-                    //close modal
-                    parent.postMessage({kind: "close-modal", data: {kind: "transaction_succeeded_without_3ds"}}, "*");
-                    window.location.replace('/payment_confirmation.html?transaction_succeeded_without_3ds=true&transaction_id=' + data.transaction_id);
+                    var params = 'transaction_succeeded_without_3ds=true' +
+                        '&transaction_id=' + data.transaction_id +
+                        '&dashboard_logs_link=' + data.dashboard_logs_link;
+                    window.location.replace('/payment_confirmation.html?' + params);
 
                 } else if (data.kind === "action_redirect") {
                     //close modal
