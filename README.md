@@ -19,7 +19,7 @@ All configurations are set in `.env` file in the project root directory using th
 
 ```.env
 STRIPE_KEY=
-VGS_PROXY=
+HTTPS_PROXY=
 VGS_COLLECT_LIBRARY_URL=
 VAULT_ID=
 VGS_VAULT_ENV=
@@ -30,7 +30,7 @@ VGS_PROXY_CERTIFICATE_B64=
 where 
 
 * `STRIPE_KEY`: Stripe Secret API Key (Stripe dashboard -> Developers -> API keys) 
-* `VGS_PROXY`: full URL with credentials for the VGS outbound proxy, `https://USERNAME:PASSWORD@<vault_id>.SANDBOX.verygoodproxy.com:8080`
+* `HTTPS_PROXY`: full URL with credentials for the VGS outbound proxy, `https://USERNAME:PASSWORD@<vault_id>.SANDBOX.verygoodproxy.com:8080`
 * `VGS_COLLECT_LIBRARY_URL`: https://dashboard.verygoodsecurity.com -> VGS Collect page
 * `VAULT_ID`: https://dashboard.verygoodsecurity.com -> Settings -> Identifier
 * `VGS_VAULT_ENV`: VGS Vault environment, `sandbox|live`
